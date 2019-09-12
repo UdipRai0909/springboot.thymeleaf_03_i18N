@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+	<html xmlns="http://wwww.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+		<head>
+			<meta charset="ISO-8859-1">
+			<link rel="stylesheet" th:href="@{/css/style.css}"></link>
+			<title>My Title Here</title>
+		</head>
+		
+		<body>
+			<h1 class="h-25"></h1>
+			<h2>User Details</h2>
+			<table>
+				<tr>
+					<th>User Id</th>
+					<th>User Name</th>
+					<th>Gender</th>
+					<th>Married?</th>
+					<th>Selected Profile</th>
+				</tr>
+				<tr	th:each="user : ${allUsers}">
+					<td th:text="${user.userId}"></td>
+					<td th:text="${user.userName}"></td>
+					<td th:text="${user.gender}"></td>
+					<td th:text="${user.married}"></td>
+					<td th:text="${user.profile}"></td>
+				</tr>
+			</table>
+			
+			<a th:href="@{/user/createuser}">Create a user</a>
+			
+		</body>
+</html>
